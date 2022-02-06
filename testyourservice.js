@@ -1,7 +1,10 @@
 var http = require('http');
+
+console.log("\x1b[31m", "testyourservice running on port 1025")
+
 http.createServer(function (req, res) {
 
-    console.log(req.method + " -> " + req.url);
+    console.log("\x1b[37m", req.method + " -> " + req.url);
 
     if (req.method == "POST") {
         req.on('data', chunk => {
@@ -11,4 +14,4 @@ http.createServer(function (req, res) {
 
     res.statusCode = 200;
     res.end();
-}).listen(process.argv[2]);
+}).listen(1025);
